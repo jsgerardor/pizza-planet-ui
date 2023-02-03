@@ -103,9 +103,9 @@ function createIngredientTemplate(ingredient) {
     return Mustache.render(template, ingredient);
 }
 
-function createBeverageTemplate(ingredient) {
+function createBeverageTemplate(beverage) {
     let template = $("#beverages-template")[0].innerHTML;
-    return Mustache.render(template, ingredient);
+    return Mustache.render(template, beverage);
 }
 
 function createSizeTemplate(size) {

@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Ingredients</title>
+    <title>L'ultima Cena Pizzeria! - Reports</title>
   </head>
 
   <body>
@@ -47,7 +47,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/app/report/report.html">Report</a>
-          </li>
+          </li>          
         </ul>
       </nav>
     </header>
@@ -56,43 +56,33 @@
 
     <div class="container">
       <div class="jumbotron">
-        <div id="ingredient-list">
-          <h2 class="text-center">Ingredients</h2>
-          <table id="ingredients" class="table bg-white table-bordered table-hover">
+        <div id="order-list">
+          <h2 class="text-center">Report</h2>
+          <table id="report" class="table bg-white table-bordered table-hover">
             <thead class="thead-dark">
               <tr class="d-flex">
-                <th class="col-2 text-center">ID</th>
-                <th class="col-4 text-center">Name</th>
-                <th class="col-3 text-center">Price</th>
-                <th class="col-3 text-center">Actions</th>
+                <th class="col-2">Most Required Ingredient</th>
+                <th class="col-2">Most Required Beverage</th>
+                <th class="col-2">Most Required Size</th>
+                <th class="col-2 text-right">Top 3 clients</th>
+                <th class="col-2 text-right">Month whit more revenue 2022</th>
+                <th class="col-2 text-right">Month whit more revenue 2023</th>                
               </tr>
             </thead>
             <tbody></tbody>
           </table>
         </div>
-
-        <div class="text-center">
-          <a class="btn btn-warning btn-lg add-ingredient" href="/app/ingredient/add-ingredient.html"
-            >Add New Ingredient</a
-          >
-        </div>
       </div>
     </div>
 
-    <template id="ingredient-item-template">
+    <template id="report-item-template">
       <tr class="d-flex">
-        <td class="col-2 text-center">{{_id}}</td>
-        <td class="col-4">{{name}}</td>
-        <td class="col-3">${{price}}</td>
-        <td class="col-3 text-center">
-          <div class="text-center">
-            <a
-              class="btn btn-success btn-sm update-ingredient"
-              href="/app/ingredient/update-ingredient.html?_id={{_id}}"
-              >Update</a
-            >
-          </div>
-        </td>
+        <td class="col-2">{{most_requested_ingredient}}</td>
+        <td class="col-2">{{most_requested_beverage}}</td>
+        <td class="col-2">{{most_requested_size}}</td>
+        <td class="col-2 text-right">1- {{top_three_clients.first}} <br> 2- {{top_three_clients.second}} <br> 3- {{top_three_clients.third}}</td>
+        <td class="col-2 text-right">{{max_revenue_value.2022.month}} <br> {{max_revenue_value.2022.income}}</td>
+        <td class="col-2 text-right">{{max_revenue_value.2023.month}} <br> {{max_revenue_value.2023.income}}</td>
       </tr>
     </template>
 
@@ -119,6 +109,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/ingredient/ingredient.js"></script>
+    <script src="/js/report/report.js"></script>
   </body>
 </html>
